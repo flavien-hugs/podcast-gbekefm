@@ -1,0 +1,45 @@
+    {# templates/includes/meta.html #}
+    
+    {% load static %}
+    {% get_static_prefix as STATIC_PREFIX %}
+
+
+    <!--[if IE 7]><html class="ie ie7"><![endif]-->
+    <!--[if IE 8]><html class="ie ie8"><![endif]-->
+    <!--[if IE 9]><html class="ie ie9"><![endif]-->
+
+    <meta charset="UTF-8">
+    <meta http-equiv='content-language' content='fr'>
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8; X-Content-Type-Options=nosniff">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="google" content="nositelinkssearchbox">
+    <meta name="keywords" content="{{ meta_keywords }}">
+    <meta name="description" content="{{ site_description }}">
+    <meta name="robots" content="noindex,follow">
+    <meta rel="canonical" href="{{ site_name }}">
+    <meta name="author" content="{{ author }}">
+    <meta name="twitter:card" content="">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="">
+    <!--./end meta-->
+    
+    <link rel="shortcut icon" href="{{ STATIC_PREFIX }}img/icon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="">
+    <link rel="apple-touch-icon" sizes="57x57" href="">
+    <link rel="apple-touch-icon" sizes="72x72" href="">
+    <link rel="apple-touch-icon" sizes="76x76" href="">
+    <link rel="apple-touch-icon" sizes="114x114" href="">
+    <link rel="apple-touch-icon" sizes="120x120" href="">
+    <link rel="apple-touch-icon" sizes="144x144" href="">
+    <link rel="apple-touch-icon" sizes="152x152" href="">
+    <!-- ./favicon and apple touch icons-->
+
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/custom.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/responsive.css">
+    <!--./end link-->

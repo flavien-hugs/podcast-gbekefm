@@ -1,0 +1,321 @@
+{# templates/home.html #}
+<!doctype html>
+<html lang="fr">
+  <head>
+    {% load static %}
+    {% get_static_prefix as STATIC_PREFIX %}
+    
+    {# INSERTION META FILE #}
+    {% include "includes/meta.html" %}
+    
+    <title>
+      {% block title %}
+        {% if title %}
+          {{ title }}
+        {% else %}
+          {{ site_description }}
+        {% endif %}
+        &smid; {{ site_name }}
+      {% endblock title %}
+    </title>
+
+    <!--[if IE 7]><body class="ie7 lt-ie8 lt-ie9 lt-ie10"><![endif]-->
+    <!--[if IE 8]><body class="ie8 lt-ie9 lt-ie10"><![endif]-->
+    <!--[if IE 9]><body class="ie9 lt-ie10"><![endif]-->
+  </head>
+
+  <body class="d-flex flex-column">
+    <div class="flex-grow-1 flex-shrink-0">
+      <div class="super_container">
+        <!-- Header -->
+        <header class="header trans_400">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="/"><span>Gbêkế</span>Fm</a>
+          </div><!-- end logo -->
+
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+                  <nav class="main_nav">
+                    <ul class="d-flex flex-row align-items-start justify-content-start">
+                      <li><a href="/">Home</a></li>
+                      <li><a href="{% url "cast:about" %}">About</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- social -->
+          <div class="header_right d-flex flex-row align-items-start justify-content-start">
+      
+            <div class="social">
+              <ul class="d-flex flex-row align-items-start justify-content-start">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+
+            <!-- Hamburger -->
+            <div class="hamburger">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </div><!-- end Hamburger -->
+          </div><!-- end social -->
+        </header><!-- ./end Header -->
+
+        <!-- Menu -->
+        <menu class="menu">
+          <div class="menu_content d-flex flex-column align-items-end justify-content-start">
+            <ul class="menu_nav_list text-right">
+              <li><a href="/">Home</a></li>
+              <li><a href="{% url "cast:about" %}">About</a></li>
+            </ul>
+            <div class="menu_extra d-flex flex-column align-items-end justify-content-start">
+              <div class="social">
+                <ul class="d-flex flex-row align-items-start justify-content-start">
+                  <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </menu><!-- ./end Menu -->
+
+        <!-- Home -->
+        {% block home %}
+          <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ STATIC_PREFIX }}img/about.jpg" data-speed="0.8"></div>
+            <div class="home_container d-flex flex-column align-items-center justify-content-center">
+              <div class="home_content">
+                <div class="home_title text-uppercase text-white"><h1>
+                  {% block home_title %}gbeke fm{% endblock home_title %}
+                </h1></div>
+                {% block home_subtitle %}{% endblock home_subtitle %}
+              </div>
+            </div>
+          </div>
+        {% endblock home %}<!-- .end/ Home -->
+
+        {% block content %}
+          <!-- episodes -->
+          <main class="episodes section-podcast">
+            <div class="container">
+              <div class="row">
+                <!-- sidebar -->
+                <aside class="col-lg-3">
+                  <div class="sidebar">
+                    <!-- Search -->
+                    <div class="sidebar_search">
+                      <div class="sidebar_title">Search</div>
+                      <form action="#" class="search_form" id="search_form">
+                        <input type="text" class="search_input" placeholder="Search here" required="required">
+                        <button class="search_button">
+                          <i class="fa fa-search"></i>
+                        </button>
+                      </form>
+                    </div><!-- end Search -->
+
+                    {# INSERTION SIDEBAR FILE #}
+                    {% include "includes/sidebar.html" %}
+                  </div>
+                </aside><!-- end Sidebar -->
+
+                <!-- all podcast -->
+                <section class="col-lg-9 episodes_col">
+                  <div class="episodes_container">
+                    
+                    <!-- podscat -->
+                    <div class="episode d-flex flex-row align-items-start justify-content-start s1">
+                      <!-- image podscat -->
+                      <div>
+                        <div class="episode_image">
+                          <img src="{{ STATIC_PREFIX }}img/episode_2.jpg" alt="">
+                          <div class="tags">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                              <li><a href="#">music</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div><!-- end image podscat -->
+
+                      <!-- podscat content -->
+                      <div class="episode_content">
+                        <div class="episode_name"><a href="{% url 'cast:podcast' %}">Audio - Lorem ipsum dolor sit amet consectetur</a></div>
+                        <div class="episode_date"><a href="#">24 September, 2018</a></div>
+                        <div class="show_info d-flex flex-row align-items-start justify-content-start">
+                          <div class="show_fav d-flex flex-row align-items-center justify-content-start">
+                            <div class="show_fav_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/heart.svg" alt=""></div>
+                            <div class="show_fav_count">2371</div>
+                          </div>
+                          <div class="show_comments">
+                            <a href="#">
+                              <div class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/bubble.svg" alt=""></div>
+                                <div class="show_comments_count">88 Comments</div>
+                              </div>
+                            </a>  
+                          </div>
+                        </div>
+
+                        <!-- player -->
+                        <div class="single_player_container">
+                          <div class="single_player d-flex flex-row align-items-center justify-content-start">
+                            <div id="jplayer_1" class="jp-jplayer"></div>
+                            <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                              <div class="jp-type-single">
+                                <div class="player_controls">
+                                  <div class="jp-gui jp-interface d-flex flex-row align-items-center justify-content-start">
+                                    <div class="jp-controls-holder time_controls d-flex flex-row align-items-center justify-content-between">
+                                      <div>
+                                        <div class="jp-controls-holder play_button ml-auto">
+                                          <button class="jp-play" tabindex="0"></button>
+                                        </div>
+                                      </div>
+                                      <div>
+                                        <div class="jp-progress">
+                                          <div class="jp-seek-bar">
+                                            <div class="jp-play-bar"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="jp-volume-controls d-flex flex-row align-items-center justify-content-between ml-auto">
+                                      <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <button class="jp-mute" tabindex="0"></button>
+                                      </div>
+                                      <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="jp-volume-bar">
+                                          <div class="jp-volume-bar-value"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="jp-no-solution">
+                                  <span>Update Required</span>
+                                  To play the media you will need to either update your browser to a recent version or update
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- end player -->
+
+                      </div><!-- end podscat content -->
+
+                    </div><!-- ./end podscat -->
+
+                    <!-- podscat -->
+                    <div class="episode d-flex flex-row align-items-start justify-content-start s2">
+                      <!-- image podscat -->
+                      <div>
+                        <div class="episode_image">
+                          <img src="{{ STATIC_PREFIX }}img/episode_2.jpg" alt="">
+                          <div class="tags">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                              <li><a href="#">music</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div><!-- end image podscat -->
+
+                      <!-- podscat content -->
+                      <div class="episode_content">
+                        <div class="episode_name"><a href="{% url 'cast:podcast' %}">Audio - Lorem ipsum dolor sit amet consectetur</a></div>
+                        <div class="episode_date"><a href="#">24 September, 2018</a></div>
+                        <div class="show_info d-flex flex-row align-items-start justify-content-start">
+                          <div class="show_fav d-flex flex-row align-items-center justify-content-start">
+                            <div class="show_fav_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/heart.svg" alt=""></div>
+                            <div class="show_fav_count">2371</div>
+                          </div>
+                          <div class="show_comments">
+                            <a href="#">
+                              <div class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/bubble.svg" alt=""></div>
+                                <div class="show_comments_count">88 Comments</div>
+                              </div>
+                            </a>  
+                          </div>
+                        </div>
+
+                        <!-- player -->
+                        <div class="single_player_container">
+                          <div class="single_player d-flex flex-row align-items-center justify-content-start">
+                            <div id="jplayer_1" class="jp-jplayer"></div>
+                            <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                              <div class="jp-type-single">
+                                <div class="player_controls">
+                                  <div class="jp-gui jp-interface d-flex flex-row align-items-center justify-content-start">
+                                    <div class="jp-controls-holder time_controls d-flex flex-row align-items-center justify-content-between">
+                                      <div>
+                                        <div class="jp-controls-holder play_button ml-auto">
+                                          <button class="jp-play" tabindex="0"></button>
+                                        </div>
+                                      </div>
+                                      <div>
+                                        <div class="jp-progress">
+                                          <div class="jp-seek-bar">
+                                            <div class="jp-play-bar"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="jp-volume-controls d-flex flex-row align-items-center justify-content-between ml-auto">
+                                      <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <button class="jp-mute" tabindex="0"></button>
+                                      </div>
+                                      <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="jp-volume-bar">
+                                          <div class="jp-volume-bar-value"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="jp-no-solution">
+                                  <span>Update Required</span>
+                                  To play the media you will need to either update your browser to a recent version or update
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- end player -->
+
+                      </div><!-- end podscat content -->
+
+                    </div><!-- ./end podscat -->
+
+                  </div>
+                </section><!-- ./end all podcast -->
+              </div>
+
+
+              <div class="row page_nav_row">
+                <div class="col">
+                  <div class="page_nav d-flex flex-row align-items-center justify-content-center">
+                    <ul class="d-flex flex-row">
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main><!-- end Episodes -->
+        {% endblock content %}
+        
+      </div>
+    </div>
+    
+    {# INSERTION FOOTER FILE #}
+    {% include "includes/footer.html" %}
+    
+    {# INSERTION JAVASCRIPT FILE #}
+    {% include "includes/script.html" %}
+  </body>
+</html>

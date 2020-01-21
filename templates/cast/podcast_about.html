@@ -1,0 +1,113 @@
+{# templates/cast/podcast_about.html #}
+{% extends "index.html" %}
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+{% block home_title %}qui sommes-nous ?{% endblock home_title %}
+
+{% block content %}
+    <!-- presentation -->
+    <div class="intro section-about">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="intro_content text-center">
+                        <div class="section_title text-center">
+                            <h1>Qui sommes-nous ?</h1>
+                        </div>
+
+                        <div class="intro_text text-center">
+                            <p>
+                                Situé en Côte d'Ivoire, dans la région du Gbêkê précisement à Bouaké, Gbêkê Fm est une station de radio qui diffuse sur internet grace à la technologie plutôt que sur les ondes. C'est la première web radio dans la région du Gbéké . Elle existe depuis un an et est spécialisée dans le montage audio visuel, la publicité à travers ses directs, des couvertures médiatiques, diffusion de spot, communiqué en langue, émissions, des formations en techniques radio, journalisme, animation radio, reportage et autre.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end presentation -->
+
+    <!-- milestones -->
+    <div class="milestones">
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ STATIC_PREFIX }}img/milestones.jpg" data-speed="0.8"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title light text-center">
+                        <h1>Qui nous suit ?</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row milestones_row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="milestone text-center">
+                        <div class="milestone_content ml-auto mr-auto">
+                            <div class="milestone_counter" data-end-value="55126">0</div>
+                            <div class="milestone_icon"><img src="{{ STATIC_PREFIX }}img/alarm-clock.svg" alt=""></div>
+                        </div>
+                        <div class="milestone_title">Streamed Hours</div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="milestone text-center">
+                        <div class="milestone_content ml-auto mr-auto">
+                            <div class="milestone_counter" data-end-value="3520">0</div>
+                            <div class="milestone_icon"><img src="{{ STATIC_PREFIX }}img/speaker.svg" alt=""></div>
+                        </div>
+                        <div class="milestone_title">Audio Episodes</div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="milestone text-center">
+                        <div class="milestone_content ml-auto mr-auto">
+                            <div class="milestone_counter" data-end-value="2056">0</div>
+                            <div class="milestone_icon"><img src="{{ STATIC_PREFIX }}img/film.svg" alt=""></div>
+                        </div>
+                        <div class="milestone_title">Interviews</div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="milestone text-center">
+                        <div class="milestone_content ml-auto mr-auto">
+                            <div class="milestone_counter" data-end-value="25">0</div>
+                            <div class="milestone_icon"><img src="{{ STATIC_PREFIX }}img/television.svg" alt=""></div>
+                        </div>
+                        <div class="milestone_title">Documentaires</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end milestones -->
+
+    <!-- about us -->
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="about_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                        <div class="about_content">
+                            <div class="section_title"><h1>About Me</h1></div>
+                            <div class="about_text">
+                                <p>Situé en Côte d'Ivoire, dans la région du Gbêkê précisement à Bouaké, Gbêkê Fm est une station de radio qui diffuse sur internet grace à la technologie plutôt que sur les ondes. C'est la première web radio dans la région du Gbéké . Elle existe depuis un an et est spécialisée dans le montage audio visuel, la publicité à travers ses directs, des couvertures médiatiques, diffusion de spot, communiqué en langue, émissions, des formations en techniques radio, journalisme, animation radio, reportage et autre.</p>
+                            </div>
+                            <div class="social">
+                                <ul class="d-flex flex-row align-items-start justify-content-start">
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="about_image"><img src="{{ STATIC_PREFIX }}img/man.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end about us -->
+{% endblock content %}

@@ -1,0 +1,25 @@
+{# templates/cast/podcast_about.html #}
+{% extends "index.html" %}
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+<!-- Home -->
+{% block home %}
+    <div class="home">
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ STATIC_PREFIX }}img/episode.jpg" data-speed="0.8"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content text-center">
+                            <div class="home_title text-uppercase text-white"><h1>Audio - Lorem ipsum dolor sit amet consectetur
+                            </h1></div>
+                            <div class="home_subtitle text-center">24 September, 2018</div>
+                        </div>
+                    </div>
+                </div>
+                {% block home_subtitle %}{% endblock home_subtitle %}
+            </div>
+        </div>
+    </div>
+{% endblock home %}<!-- .end/ Home -->
