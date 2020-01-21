@@ -5,7 +5,7 @@ __version__= '0.0.1'
 __copyright__ = '© 2019 unsta'
 
 import dj_database_url
-from cast.settings import *
+from podcast.settings import *
 
 DEBUG = TEMPLATE_DEBUG = False
 
