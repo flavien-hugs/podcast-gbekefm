@@ -3,15 +3,14 @@
 <html lang="fr">
   <head>
     {% load static tags %}
-    {% get_static_prefix as STATIC_PREFIX %}
     
     {# INSERTION META FILE #}
     {% include "includes/meta.html" %}
 
     {# CUSTOM CSS #}
     {% block css %}
-      <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/custom.css">
-      <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/custom_responsive.css">
+      <link rel="stylesheet" type="text/css" href="{% static "css/custom.css" %}">
+      <link rel="stylesheet" type="text/css" href="{% static "css/custom_responsive.css" %}">
     {% endblock css %}
     
     <title>
@@ -143,7 +142,7 @@
                         <div>
                           <div class="episode_image">
                             <img src="{% if obj.image %}
-                                {{ obj.image.url }} {% else %} {{ STATIC_PREFIX }}img/gbekefm.jpg
+                                {{ obj.image.url }} {% else %} {% static "img/gbekefm.jpg" %}
                             {% endif %}" alt="{{ obj.title }}">
                             <div class="tags">
                               <ul class="d-flex flex-row align-items-start justify-content-start">
@@ -175,7 +174,7 @@
 
                           <div class="show_info d-flex flex-row align-items-start justify-content-start">
                             <div class="show_fav d-flex flex-row align-items-center justify-content-start">
-                              <div class="show_fav_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/heart.svg"></div>
+                              <div class="show_fav_icon show_info_icon"><img class="svg" src="{% static "img/heart.svg" %}"></div>
                               <div class="show_fav_count">{{obj.like}} like{{ obj.like|pluralize }}</div>
                             </div>
                           </div>

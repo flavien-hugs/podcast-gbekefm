@@ -1,7 +1,6 @@
 {# templates/cast/podcast_about.html #}
 {% extends "index.html" %}
 {% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static "css/about.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/about_responsive.css" %}">
@@ -34,7 +33,7 @@
 
     <!-- milestones -->
     <div class="milestones">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ STATIC_PREFIX }}img/milestones.jpg" data-speed="0.8"></div>
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static "img/milestones.jpg" %}" data-speed="0.8"></div>
 
         <div class="container">
             <div class="row">
@@ -50,7 +49,7 @@
                     <div class="milestone text-center">
                         <div class="milestone_content ml-auto mr-auto">
                             <div class="milestone_counter" data-end-value="55126">0</div>
-                            <div class="milestone_icon"><img src="{{ STATIC_PREFIX }}img/alarm-clock.svg" alt=""></div>
+                            <div class="milestone_icon"><img src="{% static "img/alarm-clock.svg" %}" alt=""></div>
                         </div>
                         <div class="milestone_title">Streamed Hours</div>
                     </div>
@@ -60,7 +59,7 @@
                     <div class="milestone text-center">
                         <div class="milestone_content ml-auto mr-auto">
                             <div class="milestone_counter" data-end-value="3520">0</div>
-                            <div class="milestone_icon"><img src="{{ STATIC_PREFIX }}img/speaker.svg" alt=""></div>
+                            <div class="milestone_icon"><img src="{% static "img/speaker.svg" %}" alt=""></div>
                         </div>
                         <div class="milestone_title">Audio Episodes</div>
                     </div>
@@ -70,7 +69,7 @@
                     <div class="milestone text-center">
                         <div class="milestone_content ml-auto mr-auto">
                             <div class="milestone_counter" data-end-value="2056">0</div>
-                            <div class="milestone_icon"><img src="{{ STATIC_PREFIX }}img/film.svg" alt=""></div>
+                            <div class="milestone_icon"><img src="{% static "img/film.svg" %}" alt=""></div>
                         </div>
                         <div class="milestone_title">Interviews</div>
                     </div>
@@ -80,7 +79,7 @@
                     <div class="milestone text-center">
                         <div class="milestone_content ml-auto mr-auto">
                             <div class="milestone_counter" data-end-value="25">0</div>
-                            <div class="milestone_icon"><img src="{{ STATIC_PREFIX }}img/television.svg" alt=""></div>
+                            <div class="milestone_icon"><img src="{% static "img/television.svg" %}" alt=""></div>
                         </div>
                         <div class="milestone_title">Documentaires</div>
                     </div>
@@ -108,7 +107,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="about_image"><img src="{{ STATIC_PREFIX }}img/man.png" alt=""></div>
+                        <div class="about_image"><img src="{% static "img/man.png" %}" alt=""></div>
                     </div>
                 </div>
             </div>

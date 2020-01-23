@@ -1,7 +1,6 @@
     {# templates/includes/footer.html #}
     
     {% load static  tags %}
-    {% get_static_prefix as STATIC_PREFIX %}
 
     <!-- start footer -->
     <footer class="footer flex-shrink-0">
@@ -46,32 +45,7 @@
               
               <!-- Gallery Item -->
               <div class="gallery_item">
-                <a class="colorbox" href="{{ STATIC_PREFIX }}img/gallery_1_large.jpg"><img src="{{ STATIC_PREFIX }}img/gallery_1.jpg" alt=""></a>
-              </div>
-
-              <!-- Gallery Item -->
-              <div class="gallery_item">
-                <a class="colorbox" href="{{ STATIC_PREFIX }}img/gallery_2_large.jpg"><img src="{{ STATIC_PREFIX }}img/gallery_2.jpg" alt=""></a>
-              </div>
-
-              <!-- Gallery Item -->
-              <div class="gallery_item">
-                <a class="colorbox" href="{{ STATIC_PREFIX }}img/gallery_3_large.jpg"><img src="{{ STATIC_PREFIX }}img/gallery_3.jpg" alt=""></a>
-              </div>
-
-              <!-- Gallery Item -->
-              <div class="gallery_item">
-                <a class="colorbox" href="{{ STATIC_PREFIX }}img/gallery_4_large.jpg"><img src="{{ STATIC_PREFIX }}img/gallery_4.jpg" alt=""></a>
-              </div>
-
-              <!-- Gallery Item -->
-              <div class="gallery_item">
-                <a class="colorbox" href="{{ STATIC_PREFIX }}img/gallery_5_large.jpg"><img src="{{ STATIC_PREFIX }}img/gallery_5.jpg" alt=""></a>
-              </div>
-
-              <!-- Gallery Item -->
-              <div class="gallery_item">
-                <a class="colorbox" href="{{ STATIC_PREFIX }}img/gallery_5_large.jpg"><img src="{{ STATIC_PREFIX }}img/gallery_5.jpg" alt=""></a>
+                <a class="colorbox" href="{% static "img/gallery_1_large.jpg" %}"><img src="{% static "img/gallery_1.jpg" %}" alt=""></a>
               </div>
 
             </div>

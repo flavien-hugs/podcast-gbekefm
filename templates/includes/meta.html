@@ -1,8 +1,6 @@
     {# templates/includes/meta.html #}
     
     {% load static %}
-    {% get_static_prefix as STATIC_PREFIX %}
-
 
     <!--[if IE 7]><html class="ie ie7"><![endif]-->
     <!--[if IE 8]><html class="ie ie8"><![endif]-->
@@ -27,7 +25,7 @@
     <meta name="twitter:title" content="">
     <!--./end meta-->
     
-    <link rel="shortcut icon" href="{{ STATIC_PREFIX }}img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
     <link rel="apple-touch-icon" href="">
     <link rel="apple-touch-icon" sizes="57x57" href="">
     <link rel="apple-touch-icon" sizes="72x72" href="">
