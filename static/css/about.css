@@ -1,6 +1,24 @@
 @charset "utf-8";
 /* CSS Document */
 
+/******************************
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Header
+4. Menu
+5. Home
+6. Intro
+7. Milestones
+8. About
+9. Newsletter
+10. Footer
+
+
+******************************/
+
 /***********
 1. Fonts
 ***********/
@@ -30,6 +48,7 @@ body
 div
 {
 	display: block;
+	position: relative;
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -671,549 +690,207 @@ section
 }
 
 /*********************************
-6. Sidebar
+6. Intro
 *********************************/
 
-.sidebar
-{
-	width: 100%;
-	margin-top: -3px;
-	z-index: 1;
-}
-.sidebar_title
-{
-	font-size: 24px;
-	font-weight: 500;
-	color: #2e3038;
-	line-height: 1.2;
-}
-.search_form
-{
-	display: block;
-	position: relative;
-	width: 100%;
-	margin-top: 22px;
-}
-.search_input
-{
-	width: 100%;
-	height: 32px;
-	padding-left: 18px;
-	background: #f7f7f7;
-	border: none;
-	outline: none;
-	border-radius: 16px;
-}
-.search_input::-webkit-input-placeholder
-{
-	font-size: 13px !important;
-	font-weight: 300 !important;
-	font-style: italic;
-	color: #2e3038 !important;
-}
-.search_input:-moz-placeholder
-{
-	font-size: 13px !important;
-	font-weight: 300 !important;
-	font-style: italic;
-	color: #2e3038 !important;
-}
-.search_input::-moz-placeholder
-{
-	font-size: 13px !important;
-	font-weight: 300 !important;
-	font-style: italic;
-	color: #2e3038 !important;
-} 
-.search_input:-ms-input-placeholder
-{ 
-	font-size: 13px !important;
-	font-weight: 300 !important;
-	font-style: italic;
-	color: #2e3038 !important;
-}
-.search_input::input-placeholder
-{
-	font-size: 13px !important;
-	font-weight: 300 !important;
-	font-style: italic;
-	color: #2e3038 !important;
-}
-.search_button
-{
-	position: absolute;
-	top: 0;
-	right: 5px;
-	width: 32px;
-	height: 32px;
-	background: transparent;
-	border: none;
-	outline: none;
-	cursor: pointer;
-}
-.sidebar_list
-{
-	margin-top: 36px;
-}
-.sidebar_list ul
-{
-	margin-top: 19px;
-}
-.sidebar_list ul li:not(:last-of-type)
-{
-	margin-bottom: 3px;
-}
-.sidebar_list ul li a
-{
-	font-size: 16px;
-	font-weight: 500;
-	color: #5e5f62;
-}
-.sidebar_list ul li a:hover
-{
-	color: #ff3500;
-}
-.sidebar_tags
-{
-	margin-top: 38px;
-}
-.sidebar .tags
-{
-	position: relative;
-	top: auto;
-	left: auto;
-	margin-top: 24px;
-}
-.sidebar_archive
-{
-	margin-top: 30px;
-}
-.dropdown
-{
-	width: 100%;
-	background: #f7f7f7;
-	border-radius: 3px;
-	margin-top: 24px;
-}
-.dropdown_selected
-{
-	position: relative;
-	width: 100%;
-	height: 32px;
-	cursor: pointer;
-	padding-left: 10px;
-	padding-right: 15px;
-	font-size: 14px;
-	font-weight: 400;
-	color: #2e3038;
-}
-.dropdown_selected i
-{
-	font-size: 12px;
-	color: #2e3038;
-}
-.dropdown > ul > li > ul
-{
-	position: absolute;
-	right: 0;
-	top: 100%;
-	width: 100%;
-	padding-top: 15px;
-	background: #FFFFFF;
-	visibility: hidden;
-	opacity: 0;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.dropdown > ul > li > ul li
-{
-	padding-left: 10px;
-	padding-right: 15px;
-	padding-bottom: 7px;
-}
-.dropdown > ul > li > ul li:not(:last-of-type)
-{
-	margin-bottom: 8px;
-	border-bottom: solid 1px rgba(0,0,0,0.05);
-}
-.dropdown > ul > li > ul li a
-{
-	display: block;
-	font-size: 14px;
-	font-weight: 400;
-	color: #2e3038;
-}
-.dropdown > ul > li > ul li a:hover
-{
-	color: #ff3500;
-}
-.dropdown_selected:hover > ul
-{
-	visibility: visible;
-	opacity: 1;
-}
-.page_nav_row
-{
-	margin-top: 100px;
-}
-.page_nav ul li
-{
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	border: solid 2px #96979b;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.page_nav ul li:not(:last-of-type)
-{
-	margin-right: 8px;
-}
-.page_nav ul li a
-{
-	display: block;
-	width: 100%;
-	height: 100%;
-	line-height: 28px;
-	text-align: center;
-	font-size: 14px;
-	font-weight: 700;
-	color: #96979b;
-}
-.page_nav ul li:hover,
-.page_nav ul li.active
-{
-	background: #ff3500;
-	border-color: #ff3500;
-}
-.page_nav ul li.active a,
-.page_nav ul li:hover a
-{
-	color: #FFFFFF;
-}
-.page_nav ul li:last-child a i
-{
-	font-size: 20px;
-	line-height: 27px;
-	-webkit-transform: translateX(2px);
-	-moz-transform: translateX(2px);
-	-ms-transform: translateX(2px);
-	-o-transform: translateX(2px);
-	transform: translateX(2px);
-}
-
-/*********************************
-7. Episodes
-*********************************/
-
-.episodes
+.intro
 {
 	background: #FFFFFF;
-	padding-top: 79px;
-	padding-bottom: 99px;
+	padding-top: 97px;
+	padding-bottom: 92px;
 }
-.season_links ul li:not(:last-of-type)
+.intro_text
 {
-	margin-right: 25px;
+	margin-top: 13px;
 }
-.season_links ul li
-{
-	font-size: 16px;
-	font-weight: 400;
-	color: #494949;
-	cursor: pointer;
-}
-.season_links ul li:hover
-{
-	color: #ff3500;
-}
-.episodes_row
-{
-	margin-top: 79px;
-}
-.episodes_container
-{
-	overflow: hidden;
-}
-.episode
-{
-	width: 100%;
-	border-radius: 3px;
-	overflow: hidden;
-	background: #f7f7f7;
-}
-.episode:not(:last-child)
-{
-	margin-bottom: 30px;
-}
-.episode_image
-{
-	width: 163px;
-	height: 100%;
-}
-.tags
-{
-	position: absolute;
-	top: 13px;
-	left: 11px;
-}
-.tags ul li
-{
-    display: inline-block;
-    height: 20px;
-    background: #ff3500;
-    border-radius: 3px;
-    margin-bottom: 5px;
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -ms-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-}
-.tags ul li:not(:last-of-type)
-{
-    margin-right: 10px;
-}
-.tags ul li:hover
-{
-	background: #2e3038;
-}
-.tags ul li a
-{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    font-size: 12.73px;
-    line-height: 20px;
-    color: #FFFFFF;
-    font-weight: 500;
-    padding-left: 6px;
-    padding-right: 7px;
-}
-.episode_content
-{
-	width: 100%;
-	padding-left: 32px;
-	padding-top: 18px;
-	padding-right: 30px;
-	padding-bottom: 10px;
-}
-.episode_name a
-{
-	font-size: 18px;
-	font-weight: 500;
-	color: #2e3038;
-	line-height: 1.2;
-}
-.episode_date
-{
-	margin-top: 7px;
-}
-.episode_date a
-{
-	font-size: 14px;
-	font-weight: 300;
-	color: #2e3038;
-}
-.episode_name a:hover,
-.episode_date a:hover
-{
-	color: #ff3500;
-}
-.show_info
-{
-	margin-top: 11px;
-}
-.show_fav
-{
-	margin-left: -3px;
-}
-.show_fav_icon
-{
-	width: 26px;
-	height: 26px;
-	cursor: pointer;
-}
-.show_comments
-{
-	margin-left: 17px;
-}
-.show_comments a
-{
-	display: block;
-}
-.show_comments_icon
-{
-	width: 26px;
-	height: 26px;
-	cursor: pointer;
-}
-.show_info_icon img
-{
-	max-height: 100%;
-}
-.show_info_icon svg
-{
-	max-width: 100%;
-	max-height: 100%;
-}
-.svg path, .svg rect, .svg polygon
-{
-    fill: #7b7b7b;
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -ms-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-}
-.show_fav_icon.active .svg path,
-.show_fav_icon:hover .svg path,
-.show_comments:hover .svg path
-{
-	fill: #ff3500;
-}
-.show_fav_count,
-.show_comments_count
-{
-	font-size: 14px;
-	font-weight: 500;
-	color: #2e3038;
-	margin-left: 7px;
-	margin-bottom: 2px;
-}
-.show_comments:hover .show_comments_count
-{
-	color: #ff3500;
-}
-.single_player_container
-{
-	margin-top: 6px;
-}
-.single_player
-{
-	width: 100%;
-	height: 40px;
-}
-.jp-audio
-{
-	width: 100%;
-}
-.time_controls
-{
-	width: calc(100% - 112px);
-}
-.time_controls > div:first-child
-{
-	width: 40px;
-}
-.time_controls > div:last-child
-{
-	width: calc(100% - 40px);
-}
-.play_button
-{
-	width: 100%;
-}
-.jp-play
-{
-	position: relative;
-	width: 26px;
-	height: 26px;
-	background: transparent;
-	border: none;
-	outline: none !important;
-	cursor: pointer;
-	margin-top: 5px;
-}
-.jp-play::after
-{
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	text-align: left;
-	content: url(../img/play-2.png);
-}
-.jp-state-playing .jp-play::after
-{
-	content: url(../img/pause.png);
-}
-.jp-progress
-{
-	width: 100%;
-	height: 13px;
-	background: #e9e9e9;
-	cursor: pointer;
-	border-radius: 7px;
-	overflow: hidden;
-}
-.jp-seek-bar
-{
-	height: 100%;
-}
-.jp-play-bar
-{
-	height: 100%;
-	background: #2e3038;
-}
-.jp-volume-controls
-{
-	width: 97px;
-}
-.jp-volume-controls > div:first-child
+.intro_text p
 {
 	
 }
-.jp-mute
+.intro_button
 {
-	position: relative;
-	width: 26px;
-	height: 26px;
-	background: transparent;
-	border: none;
-	outline: none !important;
-	cursor: pointer;
+	width: 161px;
+	margin-top: 29px;
 }
-.jp-mute::after
+
+/*********************************
+7. Milestones
+*********************************/
+
+.milestones
 {
-	display: block;
+	padding-top: 65px;
+	padding-bottom: 112px;
+}
+.milestones_row
+{
+	margin-top: 69px;
+}
+.milestones_row > div[class^='col']
+{
+	margin-bottom: 60px;
+}
+.milestone
+{
+	
+}
+.milestone_content
+{
+	height: 80px;
+}
+.milestone_icon
+{
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	content: url(../img/vol.png);
+	max-height: 100%;
+	max-width: none;
+	opacity: 0.25;
+	pointer-events: none;
 }
-.jp-state-muted .jp-mute::after
+.milestone_icon img
 {
-	content: url(../img/mute.png);
+	max-height: 100%;
+	max-width: 80px;
 }
-.jp-volume-bar
+.milestone_counter
 {
-	width: 58px;
-	height: 13px;
-	background: #e9e9e9;
-	border-radius: 7px;
-	overflow: hidden;
-	cursor: pointer;
+	font-size: 24px;
+	font-weight: 500;
+	color: #FFFFFF;
+	line-height: 80px;
 }
-.jp-volume-bar-value
+.milestone_title
 {
-	height: 100%;
-	background: #2e3038;
+	font-size: 18px;
+	font-weight: 500;
+	color: #FFFFFF;
+	line-height: 0.75;
+	margin-top: 33px;
 }
 
 /*********************************
-8. Footer
+8. About
+*********************************/
+
+.about
+{
+	background: #FFFFFF;
+	padding-top: 103px;
+}
+.about_content
+{
+	width: calc(100% - 390px);
+	margin-top: 35px;
+}
+.about_image
+{
+	width: 390px;
+	padding-right: 30px;
+}
+.about_text
+{
+	margin-top: 36px;
+}
+.about .social
+{
+	margin-top: 40px;
+}
+.about .social ul li
+{
+	width: 48px;
+	height: 48px;
+	border-color: #bba9ab;
+}
+.social ul li:not(:first-child)
+{
+	margin-left: 0;
+}
+.about .social ul li:not(:last-of-type)
+{
+	margin-right: 6px;
+}
+.about .social ul li a i
+{
+	font-size: 22px;
+	color: #bba9ab;
+	line-height: 46px;
+}
+.about .social ul li:hover
+{
+	border-color: #ff3500;
+}
+.about .social ul li:hover a i
+{
+	color: #ff3500;
+}
+
+/*********************************
+9. Newsletter
+*********************************/
+
+.newsletter
+{
+	padding-top: 74px;
+	padding-bottom: 166px;
+}
+.newsletter_text
+{
+	max-width: 510px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 18px;
+}
+.newsletter_text p
+{
+	font-size: 16px;
+	font-weight: 300;
+	color: #FFFFFF;
+	line-height: 1.5;
+}
+.newsletter_row
+{
+	margin-top: 63px;
+}
+.newsletter_form_container
+{
+	width: 100%;
+}
+.newsletter_form
+{
+	display: block;
+}
+.newsletter_input
+{
+	display: block;
+	width: calc(100% - 260px);
+	height: 54px;
+	background: #FFFFFF;
+	border: none;
+	outline: none;
+	border-radius: 27px;
+	font-size: 18px;
+	color: #1f2128;
+	padding-left: 30px;
+}
+.newsletter_button
+{
+	width: 230px;
+	height: 54px;
+	border: none;
+	outline: none;
+	border-radius: 27px;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+/*********************************
+10. Footer
 *********************************/
 
 .footer

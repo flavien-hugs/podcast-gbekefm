@@ -11,5 +11,4 @@ et [Django3](http://www.djangoproject.com) version LTS.
 
 Credits
 ------------
-
 Code: [flavien-hugs](https://twitter.com/flavien_hugs)

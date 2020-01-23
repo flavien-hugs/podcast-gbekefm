@@ -4,52 +4,23 @@
     {% get_static_prefix as STATIC_PREFIX %}
 
     <!-- Categories -->
-    <div class="sidebar_list">
-        <div class="sidebar_title">Categories</div>
-        <ul>
-            <li class="item_filter_btn" data-filter="*"><a href="#">Travel</a></li>
-            <li class="item_filter_btn" data-filter=".s1"><a href="#">Music</a></li>
-            <li class="item_filter_btn" data-filter=".s2"><a href="#">Lifestyle</a></li>
-            <li class="item_filter_btn" data-filter=".s3"><a href="#">Social Media</a></li>
-            <li><a href="#">Art</a></li>
-            <li><a href="#">Audiobooks</a></li>
-            <li><a href="#">Documentaries</a></li>
-        </ul>
-    </div><!-- end Categories -->
-
-    <!-- Tags -->
     <div class="sidebar_tags">
-        <div class="sidebar_title">Tags</div>
+        <div class="sidebar_title">Categories</div>
         <div class="tags">
             <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                <li><a href="#">music</a></li>
-                <li><a href="#">art</a></li>
-                <li><a href="#">technology</a></li>
-                <li><a href="#">travel & food</a></li>
-                <li><a href="#">viral</a></li>
-                <li><a href="#">interview</a></li>
-                <li><a href="#">social media</a></li>
-                <li><a href="#">development</a></li>
-                <li><a href="#">success</a></li>
-                <li><a href="#">did you know?</a></li>
-                <li><a href="#">live</a></li>
+                {% for c in categorie %}
+                    <li>
+                        <a href="#"> {{ c.cat }} </a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
-    </div><!-- end Tags -->
+    </div><!-- end Categories -->
+
+    <!-- Tags --><!-- end Tags -->
 
     <!-- Archive -->
     <div class="sidebar_archive">
         <div class="sidebar_title">Archive</div>
-        <div class="dropdown">
-            <ul>
-                <li class="dropdown_selected d-flex flex-row align-items-center justify-content-start"><span>September 2018</span><i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
-                    <ul>
-                        <li><a href="#">August 2018</a></li>
-                        <li><a href="#">July 2018</a></li>
-                        <li><a href="#">June 2018</a></li>
-                        <li><a href="#">May 2018</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+        {% include "cast/podcast_archive_month.html" %}
     </div> <!-- ./end Archive -->

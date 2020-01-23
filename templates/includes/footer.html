@@ -1,6 +1,6 @@
     {# templates/includes/footer.html #}
     
-    {% load static %}
+    {% load static  tags %}
     {% get_static_prefix as STATIC_PREFIX %}
 
     <!-- start footer -->
@@ -20,110 +20,28 @@
           <div class="col-lg-4">
             <div class="footer_title">Tags</div>
             <div class="footer_list">
-              <div><div><a href="#">music</a></div></div>
-              <div><div><a href="#">art</a></div></div>
-              <div><div><a href="#">technology</a></div></div>
-              <div><div><a href="#">travel & food</a></div></div>
-              <div><div><a href="#">viral</a></div></div>
-              <div><div><a href="#">social media</a></div></div>
-              <div><div><a href="#">interview</a></div></div>
-              <div><div><a href="#">developement</a></div></div>
-              <div><div><a href="#">success</a></div></div>
-              <div><div><a href="#">live</a></div></div>
-              <div><div><a href="#">did you know?</a></div></div>
-              <div><div><a href="#">health</a></div></div>
+              <div>
+                {% for cat in categorie %}
+                  <div><a href="#">{{ cat.cat|safe }}</a></div>
+                {% endfor %}
+              </div>
             </div>
           </div><!-- end Tags -->
 
           <!-- Latest Episodes -->
           <div class="col-lg-4">
-            <div class="footer_title">Latest Episodes</div>
+            <div class="footer_title">Derniers informations</div>
             <div class="latest_container">
               
               <!-- Latest -->
-              <div class="latest">
-                <div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
-                  <a href="episode.html">
-                    <div class="d-flex flex-row align-items-start justify-content-start">
-                      <div class="latest_play">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 714 714" style="enable-background:new 0 0 714 714;" xml:space="preserve">
-                          <g id="Play">
-                            <path d="M641.045,318.521L102,0C73.822,0,51,22.822,51,51v612c0,28.178,22.822,51,51,51l539.045-318.521      C654.661,387.422,663,372.81,663,357C663,341.19,654.661,326.579,641.045,318.521z M153,565.386V148.614L505.665,357      L153,565.386z" fill="#FFFFFF"/>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="latest_title_content">
-                        <div class="latest_title">Season 4 Episode 48 - A Step Further</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="latest_episode_info">
-                  <ul class="d-flex flex-row align-items-start justify-content-start">
-                    <li><a href="#">September 24, 2018</a></li>
-                    <li><a href="#">Music</a></li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Latest -->
-              <div class="latest">
-                <div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
-                  <a href="episode.html">
-                    <div class="d-flex flex-row align-items-start justify-content-start">
-                      <div class="latest_play">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 714 714" style="enable-background:new 0 0 714 714;" xml:space="preserve">
-                          <g id="Play">
-                            <path d="M641.045,318.521L102,0C73.822,0,51,22.822,51,51v612c0,28.178,22.822,51,51,51l539.045-318.521      C654.661,387.422,663,372.81,663,357C663,341.19,654.661,326.579,641.045,318.521z M153,565.386V148.614L505.665,357      L153,565.386z" fill="#FFFFFF"/>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="latest_title_content">
-                        <div class="latest_title">Season 4 Episode 47 - Deep in Crypto</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="latest_episode_info">
-                  <ul class="d-flex flex-row align-items-start justify-content-start">
-                    <li><a href="#">September 24, 2018</a></li>
-                    <li><a href="#">Music</a></li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Latest -->
-              <div class="latest">
-                <div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
-                  <a href="episode.html">
-                    <div class="d-flex flex-row align-items-start justify-content-start">
-                      <div class="latest_play">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 714 714" style="enable-background:new 0 0 714 714;" xml:space="preserve">
-                          <g id="Play">
-                            <path d="M641.045,318.521L102,0C73.822,0,51,22.822,51,51v612c0,28.178,22.822,51,51,51l539.045-318.521      C654.661,387.422,663,372.81,663,357C663,341.19,654.661,326.579,641.045,318.521z M153,565.386V148.614L505.665,357      L153,565.386z" fill="#FFFFFF"/>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="latest_title_content">
-                        <div class="latest_title">Season 4 Episode 46 - Nothing is real</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="latest_episode_info">
-                  <ul class="d-flex flex-row align-items-start justify-content-start">
-                    <li><a href="#">September 24, 2018</a></li>
-                    <li><a href="#">Music</a></li>
-                  </ul>
-                </div>
-              </div>
+              {% latest_podcast 3 %}
 
             </div>
           </div><!-- end Latest Episodes -->
 
           <!-- Gallery -->
           <div class="col-lg-4">
-            <div class="footer_title">Instagram</div>
+            <div class="footer_title">Evènements de la semaine</div>
             <div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
               
               <!-- Gallery Item -->
@@ -151,8 +69,13 @@
                 <a class="colorbox" href="{{ STATIC_PREFIX }}img/gallery_5_large.jpg"><img src="{{ STATIC_PREFIX }}img/gallery_5.jpg" alt=""></a>
               </div>
 
+              <!-- Gallery Item -->
+              <div class="gallery_item">
+                <a class="colorbox" href="{{ STATIC_PREFIX }}img/gallery_5_large.jpg"><img src="{{ STATIC_PREFIX }}img/gallery_5.jpg" alt=""></a>
+              </div>
+
             </div>
-          </div><!-- end Gallery -->
+          </div><!-- end evenements -->
         </div>
 
         <div class="row footer_social_row">
@@ -166,6 +89,6 @@
           </div>
         </div>
         </br></br>
-        &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
+        &copy;<script>document.write(new Date().getFullYear());</script> Tous droits reservés.
       </div>
     </footer><!--./end footer -->

@@ -2,16 +2,24 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    {% load static %}
+    {% load static tags %}
     {% get_static_prefix as STATIC_PREFIX %}
     
     {# INSERTION META FILE #}
     {% include "includes/meta.html" %}
+
+    {# CUSTOM CSS #}
+    {% block css %}
+      <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/custom.css">
+      <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/custom_responsive.css">
+    {% endblock css %}
     
     <title>
       {% block title %}
         {% if title %}
           {{ title }}
+        {% elif object.title %}
+          {{ object.title }}
         {% else %}
           {{ site_description }}
         {% endif %}
@@ -51,6 +59,8 @@
 
           <!-- social -->
           <div class="header_right d-flex flex-row align-items-start justify-content-start">
+            <!-- help -->
+            <div class="submit"><a href="#">Soutenir la radio</a></div>
       
             <div class="social">
               <ul class="d-flex flex-row align-items-start justify-content-start">
@@ -93,7 +103,6 @@
                 <div class="home_title text-uppercase text-white"><h1>
                   {% block home_title %}gbeke fm{% endblock home_title %}
                 </h1></div>
-                {% block home_subtitle %}{% endblock home_subtitle %}
               </div>
             </div>
           </div>
@@ -128,183 +137,70 @@
                   <div class="episodes_container">
                     
                     <!-- podscat -->
-                    <div class="episode d-flex flex-row align-items-start justify-content-start s1">
-                      <!-- image podscat -->
-                      <div>
-                        <div class="episode_image">
-                          <img src="{{ STATIC_PREFIX }}img/episode_2.jpg" alt="">
-                          <div class="tags">
-                            <ul class="d-flex flex-row align-items-start justify-content-start">
-                              <li><a href="#">music</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div><!-- end image podscat -->
-
-                      <!-- podscat content -->
-                      <div class="episode_content">
-                        <div class="episode_name"><a href="#">Audio - Lorem ipsum dolor sit amet consectetur</a></div>
-                        <div class="episode_date"><a href="#">24 September, 2018</a></div>
-                        <div class="show_info d-flex flex-row align-items-start justify-content-start">
-                          <div class="show_fav d-flex flex-row align-items-center justify-content-start">
-                            <div class="show_fav_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/heart.svg" alt=""></div>
-                            <div class="show_fav_count">2371</div>
-                          </div>
-                          <div class="show_comments">
-                            <a href="#">
-                              <div class="d-flex flex-row align-items-center justify-content-start">
-                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/bubble.svg" alt=""></div>
-                                <div class="show_comments_count">88 Comments</div>
-                              </div>
-                            </a>  
-                          </div>
-                        </div>
-
-                        <!-- player -->
-                        <div class="single_player_container">
-                          <div class="single_player d-flex flex-row align-items-center justify-content-start">
-                            <div id="jplayer_1" class="jp-jplayer"></div>
-                            <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-                              <div class="jp-type-single">
-                                <div class="player_controls">
-                                  <div class="jp-gui jp-interface d-flex flex-row align-items-center justify-content-start">
-                                    <div class="jp-controls-holder time_controls d-flex flex-row align-items-center justify-content-between">
-                                      <div>
-                                        <div class="jp-controls-holder play_button ml-auto">
-                                          <button class="jp-play" tabindex="0"></button>
-                                        </div>
-                                      </div>
-                                      <div>
-                                        <div class="jp-progress">
-                                          <div class="jp-seek-bar">
-                                            <div class="jp-play-bar"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="jp-volume-controls d-flex flex-row align-items-center justify-content-between ml-auto">
-                                      <div class="d-flex flex-row align-items-center justify-content-start">
-                                        <button class="jp-mute" tabindex="0"></button>
-                                      </div>
-                                      <div class="d-flex flex-row align-items-center justify-content-start">
-                                        <div class="jp-volume-bar">
-                                          <div class="jp-volume-bar-value"></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="jp-no-solution">
-                                  <span>Update Required</span>
-                                  To play the media you will need to either update your browser to a recent version or update
-                                </div>
-                              </div>
+                    {% for obj in object_list %}
+                      <div class="episode d-flex flex-row align-items-start justify-content-start s1">
+                        <!-- image podscat -->
+                        <div>
+                          <div class="episode_image">
+                            <img src="{% if obj.image %}
+                                {{ obj.image.url }} {% else %} {{ STATIC_PREFIX }}img/gbekefm.jpg
+                            {% endif %}" alt="{{ obj.title }}">
+                            <div class="tags">
+                              <ul class="d-flex flex-row align-items-start justify-content-start">
+                                <li>
+                                  {% for c in obj.categorie.all %}
+                                    <a href="#">
+                                      {{ c.cat|upper|safe }}
+                                    </a>
+                                  {% endfor %}
+                                </li>
+                              </ul>
                             </div>
                           </div>
-                        </div><!-- end player -->
+                        </div><!-- end image podscat -->
 
-                      </div><!-- end podscat content -->
-
-                    </div><!-- ./end podscat -->
-
-                    <!-- podscat -->
-                    <div class="episode d-flex flex-row align-items-start justify-content-start s2">
-                      <!-- image podscat -->
-                      <div>
-                        <div class="episode_image">
-                          <img src="{{ STATIC_PREFIX }}img/episode_2.jpg" alt="">
-                          <div class="tags">
-                            <ul class="d-flex flex-row align-items-start justify-content-start">
-                              <li><a href="#">music</a></li>
-                            </ul>
+                        <!-- podscat content -->
+                        <div class="episode_content">
+                          <div class="episode_name">
+                            {% for c in obj.categorie.all %}
+                              <a href="{{ obj.get_absolute_url }}">
+                                {{ c.cat|upper|safe }} &smid; {{ obj.title|safe }}
+                              </a>
+                            {% endfor %} 
                           </div>
-                        </div>
-                      </div><!-- end image podscat -->
 
-                      <!-- podscat content -->
-                      <div class="episode_content">
-                        <div class="episode_name"><a href="#">Audio - Lorem ipsum dolor sit amet consectetur</a></div>
-                        <div class="episode_date"><a href="#">24 September, 2018</a></div>
-                        <div class="show_info d-flex flex-row align-items-start justify-content-start">
-                          <div class="show_fav d-flex flex-row align-items-center justify-content-start">
-                            <div class="show_fav_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/heart.svg" alt=""></div>
-                            <div class="show_fav_count">2371</div>
+                          <div class="episode_date">
+                            <a href="#"> {{ obj.publish|date }} </a>
                           </div>
-                          <div class="show_comments">
-                            <a href="#">
-                              <div class="d-flex flex-row align-items-center justify-content-start">
-                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/bubble.svg" alt=""></div>
-                                <div class="show_comments_count">88 Comments</div>
-                              </div>
-                            </a>  
-                          </div>
-                        </div>
 
-                        <!-- player -->
-                        <div class="single_player_container">
-                          <div class="single_player d-flex flex-row align-items-center justify-content-start">
-                            <div id="jplayer_1" class="jp-jplayer"></div>
-                            <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-                              <div class="jp-type-single">
-                                <div class="player_controls">
-                                  <div class="jp-gui jp-interface d-flex flex-row align-items-center justify-content-start">
-                                    <div class="jp-controls-holder time_controls d-flex flex-row align-items-center justify-content-between">
-                                      <div>
-                                        <div class="jp-controls-holder play_button ml-auto">
-                                          <button class="jp-play" tabindex="0"></button>
-                                        </div>
-                                      </div>
-                                      <div>
-                                        <div class="jp-progress">
-                                          <div class="jp-seek-bar">
-                                            <div class="jp-play-bar"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="jp-volume-controls d-flex flex-row align-items-center justify-content-between ml-auto">
-                                      <div class="d-flex flex-row align-items-center justify-content-start">
-                                        <button class="jp-mute" tabindex="0"></button>
-                                      </div>
-                                      <div class="d-flex flex-row align-items-center justify-content-start">
-                                        <div class="jp-volume-bar">
-                                          <div class="jp-volume-bar-value"></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="jp-no-solution">
-                                  <span>Update Required</span>
-                                  To play the media you will need to either update your browser to a recent version or update
-                                </div>
-                              </div>
+                          <div class="show_info d-flex flex-row align-items-start justify-content-start">
+                            <div class="show_fav d-flex flex-row align-items-center justify-content-start">
+                              <div class="show_fav_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/heart.svg"></div>
+                              <div class="show_fav_count">{{obj.like}} like{{ obj.like|pluralize }}</div>
                             </div>
                           </div>
-                        </div><!-- end player -->
 
-                      </div><!-- end podscat content -->
-
-                    </div><!-- ./end podscat -->
+                          <!-- player -->
+                          <div class="single_player_container">
+                            <div class="single_player flex-row align-items-center justify-content-start">
+                              <div class="player">
+                                <audio id="player{{ obj.id }}" preload="none" controls style="width:100%">
+                                  <source src="{{ obj.url_audio }}" type="audio/mp3">
+                                </audio>
+                              </div>
+                            </div>
+                          </div><!-- end player -->
+                        </div><!-- end podscat content -->
+                      </div><!-- ./end podscat -->
+                    {% endfor %}
 
                   </div>
                 </section><!-- ./end all podcast -->
               </div>
-
-
-              <div class="row page_nav_row">
-                <div class="col">
-                  <div class="page_nav d-flex flex-row align-items-center justify-content-center">
-                    <ul class="d-flex flex-row">
-                      <li class="active"><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              
+              <!-- pagination -->
+              {% include "includes/pagination.html" %}
+              <!-- end pagination -->
             </div>
           </main><!-- end Episodes -->
         {% endblock content %}

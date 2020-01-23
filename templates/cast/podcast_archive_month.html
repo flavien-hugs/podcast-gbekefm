@@ -1,0 +1,27 @@
+        {# templates/cast/podcast_archive_year.html #}
+    
+        {% load static %}
+
+        <div class="dropdown">
+            <ul>
+                <li class="dropdown_selected d-flex flex-row align-items-center justify-content-start"><span>{{ year }}</span><i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+                    <ul>
+                        {% if object_list %}
+                            {% for obj in object_list %}
+                                <li>
+                                    <a href="#">
+                                        {{ obj.publish|date:"F Y" }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        {% elif object %}
+                            <li>
+                                <a href="#">
+                                    {{ object.publish|date:"F Y" }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+        </div>

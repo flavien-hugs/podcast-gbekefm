@@ -2,6 +2,10 @@
 {% extends "index.html" %}
 {% load static %}
 {% get_static_prefix as STATIC_PREFIX %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/detail.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/detail_responsive.css">
+{% endblock css %}
 
 <!-- Home -->
 {% block home %}
@@ -12,14 +16,141 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_content text-center">
-                            <div class="home_title text-uppercase text-white"><h1>Audio - Lorem ipsum dolor sit amet consectetur
-                            </h1></div>
-                            <div class="home_subtitle text-center">24 September, 2018</div>
+                            <div class="home_title text-white">
+                                <h1> {{ object.title|upper|safe }} </h1>
+                            </div>
+                            <div class="home_subtitle text-center">
+                                {{ object.publish|date }}
+                            </div>
                         </div>
                     </div>
                 </div>
-                {% block home_subtitle %}{% endblock home_subtitle %}
+            </div>
+        </div>
+
+        <div class="home_player_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 offset-lg-3">
+                        <!-- episode -->
+                        <div class="player d-flex flex-row align-items-start justify-content-start">
+                            <div class="player_content">
+                                <!-- player -->
+                                <div class="single_player_container">
+                                    <div class="single_player flex-row align-items-center justify-content-start">
+                                        <div class="player">
+                                            <audio id="player1" preload="none" controls style="width:100%">
+                                                <source src="{{ object.url_audio }}" type="audio/mp3">
+                                            </audio>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="show_info d-flex flex-row align-items-start justify-content-start">
+                                    <div class="show_comments">
+                                        <a href="javascript:{document.getElementById('uplike{{ object.id }}').submit()}">
+                                            <div class="d-flex flex-row align-items-center justify-content-start">
+                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/heart.svg" alt=""></div>
+                                                <div class="show_comments_count">{{object.like}} like{{ object.like|pluralize }}</div>
+                                            </div>
+                                        </a>    
+                                    </div>
+                                </div>
+                                <form action="{% url 'cast:uplike' object.slug object.id %}" method="POST" id="uplike{{ object.id }}">{% csrf_token %}<input type="hidden"></form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 {% endblock home %}<!-- .end/ Home -->
+
+{% block content %}
+    <div class="episode_container">
+
+        <!-- Episode Image -->
+        <div class="episode_image_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <!-- Episode Image -->
+                        <div class="episode_image">
+                            <img src="{% if object.image %}{{ object.image.url }}{% else %}{{ STATIC_PREFIX }}img/gbekefm.jpg{% endif %}" alt="{{ object.title }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                
+                <!-- sidebar -->
+                <div class="col-lg-3 order-lg-1 order-2 sidebar_col">
+                    <div class="sidebar">
+                        {% include "includes/sidebar.html" %}
+                    </div>
+                </div><!-- end sidebar -->
+
+                <!-- emission -->
+                <div class="col-lg-9 episode_col order-lg-2 order-1">
+                    <div class="intro">
+                        <div class="section_title">
+                            {% for c in object.categorie.all %}
+                                {{ c.cat|upper|safe }}
+                            {% endfor %} &smid; {{ object.title|safe }}
+                        </div>
+                         
+                        <div class="intro_text">
+                            <p>{{ object.description }}</p>
+                        </div>
+                    </div>
+                    <div class="guests">
+                        <div class="section_title">Invités du jours</div>
+                        <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-start">
+                            
+                            <!-- invités -->
+                            <div class="guest_container">
+                                <div class="guest">
+                                    <div class="guest_image"><img src="{{ STATIC_PREFIX }}img/guest_1.jpg" alt=""></div>
+                                    <div class="guest_content text-center">
+                                        <div class="guest_name"><a href="#">Michael Smith</a></div>
+                                        <div class="guest_title">Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- invités -->
+                            <div class="guest_container">
+                                <div class="guest">
+                                    <div class="guest_image"><img src="{{ STATIC_PREFIX }}img/guest_2.jpg" alt=""></div>
+                                    <div class="guest_content text-center">
+                                        <div class="guest_name"><a href="#">Samantha Doe</a></div>
+                                        <div class="guest_title">Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- invités -->
+                            <div class="guest_container">
+                                <div class="guest">
+                                    <div class="guest_image"><img src="{{ STATIC_PREFIX }}img/guest_3.jpg" alt=""></div>
+                                    <div class="guest_content text-center">
+                                        <div class="guest_name"><a href="#">James Williams</a></div>
+                                        <div class="guest_title">Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- commentaire -->
+
+                    <!-- ajouter un commentaire -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

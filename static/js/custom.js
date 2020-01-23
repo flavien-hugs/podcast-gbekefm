@@ -1,22 +1,5 @@
 /* JS Document */
 
-/******************************
-
-[Table of Contents]
-
-1. Vars and Inits
-2. Set Header
-3. Init Menu
-4. Init Favs
-5. Init SVG
-6. Init Isotope
-7. Init Single Player
-8. Init Gallery
-
-
-******************************/
-
-
 $(document).ready(function()
 {
 	"use strict";
@@ -33,8 +16,6 @@ $(document).ready(function()
 	initMenu();
 	initFavs();
 	initSvg();
-	initIsotope();
-	initSinglePlayer();
 	initGallery();
 
 	$(window).on('resize', function()
@@ -170,75 +151,6 @@ $(document).ready(function()
 
 	/* 
 
-	6. Init Isotope
-
-	*/
-
-    function initIsotope()
-    {
-    	if($('.episode').length)
-    	{
-    		var grid = $('.episodes_container').isotope({
-	  			itemSelector: '.episode',
-	  			percentPosition: true,
-	  			masonry:
-	  			{
-				    horizontalOrder: true
-			  	}
-	        });
-
-	        // Filtering
-	        $('.item_filter_btn').on('click', function()
-	        {
-		        var filterValue = $(this).attr('data-filter');
-				grid.isotope({ filter: filterValue });
-	        });
-    	}
-    }
-
-	/* 
-
-	7. Init Single Player
-
-	*/
-
-	function initSinglePlayer()
-	{
-		if($(".jp-jplayer").length)
-		{
-			$("#jplayer_1").jPlayer({
-				ready: function () {
-					$(this).jPlayer("setMedia", {
-						title:"Better Days",
-							artist:"Bensound",
-							mp3:"files/bensound-betterdays.mp3"
-					});
-				},
-				play: function() { // To avoid multiple jPlayers playing together.
-					$(this).jPlayer("pauseOthers");
-				},
-				swfPath: "js/jplayer",
-				supplied: "mp3",
-				cssSelectorAncestor: "#jp_container_1",
-				wmode: "window",
-				globalVolume: false,
-				useStateClassSkin: true,
-				autoBlur: false,
-				smoothPlayBar: true,
-				keyEnabled: true,
-				solution: 'html',
-				preload: 'metadata',
-				volume: 0.2,
-				muted: false,
-				backgroundColor: '#000000',
-				errorAlerts: true,
-				warningAlerts: true
-			});
-		}
-	}
-
-	/* 
-
 	8. Init Gallery
 
 	*/
@@ -256,5 +168,4 @@ $(document).ready(function()
 			});
 		}
 	}
-
 });
