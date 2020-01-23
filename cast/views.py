@@ -28,7 +28,6 @@ class SearchView(View):
         return render(request, template, context)
 
 
-
 # VUE DE LA PAGE D'ACCUEIL
 class HomeView(ListView):
 
@@ -78,14 +77,16 @@ def uplike(request, slug, podcast_id):
 
 # VUE DE LA PAGE ABOUT
 class PodcastAboutView(TemplateView):
+
 	template_name = 'cast/podcast_about.html'
 
-	def get_context_data(self, **kwargs):
-	    context = super(PodcastAboutView, self).get_context_data(**kwargs)
-        context['title'] = "about".upper()
+    def get_context_data(self, **kwargs):
+        context = super(PodcastAboutView, self).get_context_data(**kwargs)
         cat = Categorie.objects.all()
         context['categorie'] = cat
-	    return context
+        context['title'] = "about".upper()
+
+        return context
 
 
 # VUE ARCHIVE DU MOIS
