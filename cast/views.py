@@ -82,7 +82,9 @@ class PodcastAboutView(TemplateView):
 
 	def get_context_data(self, **kwargs):
 	    context = super(PodcastAboutView, self).get_context_data(**kwargs)
-	    context['title'] = "about".upper()
+        context['title'] = "about".upper()
+        cat = Categorie.objects.all()
+        context['categorie'] = cat
 	    return context
 
 

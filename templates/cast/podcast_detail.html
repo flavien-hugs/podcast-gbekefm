@@ -3,8 +3,8 @@
 {% load static %}
 {% get_static_prefix as STATIC_PREFIX %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/detail.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/detail_responsive.css">
+    <link rel="stylesheet" type="text/css" href="{% static "css/detail.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/detail_responsive.css" %}">
 {% endblock css %}
 
 <!-- Home -->
