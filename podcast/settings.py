@@ -4,7 +4,9 @@ __author__ = 'Flavien-hugs <flavienhgs@pm.me>'
 __version__= '0.0.1'
 __copyright__ = '© 2019 unsta'
 
+
 import os
+import django_heroku
 from django.core.exceptions import ImproperlyConfigured
 
 def get_env_variable(var_name, default_value=None):
@@ -29,7 +31,6 @@ SECRET_KEY = get_env_variable= ('SECRET_KEY', '+vd0=9@en39mf*aha9#bgao)w8i*mulf=
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 DEFAULT_CHARSET = 'UTF-8'
 DEFAULT_CONTENT_TYPE = 'text/html'
 
@@ -148,14 +149,4 @@ STATICFILES_FINDERS = (
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Custom template context processor setting
-TEMPLATE_CONTEXT_PROCESSORS = [
-    "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.static",
-    "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages",
-    'django.core.context_processors.request',
-]
+django_heroku.settings(locals())

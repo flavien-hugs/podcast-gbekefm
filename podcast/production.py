@@ -7,7 +7,7 @@ __copyright__ = '© 2019 unsta'
 import dj_database_url
 from podcast.settings import *
 
-DEBUG = TEMPLATE_DEBUG = False
+DEBUG = False
 
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] = dj_database_url.config()
