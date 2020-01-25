@@ -1,7 +1,6 @@
 {# templates/cast/podcast_about.html #}
 {% extends "index.html" %}
 {% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static "css/detail.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/detail_responsive.css" %}">
@@ -10,7 +9,7 @@
 <!-- Home -->
 {% block home %}
     <div class="home">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ STATIC_PREFIX }}img/episode.jpg" data-speed="0.8"></div>
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static "img/episode.jpg" %}" data-speed="0.8"></div>
         <div class="home_container">
             <div class="container">
                 <div class="row">
@@ -50,7 +49,7 @@
                                     <div class="show_comments">
                                         <a href="javascript:{document.getElementById('uplike{{ object.id }}').submit()}">
                                             <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ STATIC_PREFIX }}img/heart.svg" alt=""></div>
+                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{% static "img/heart.svg" %}" alt=""></div>
                                                 <div class="show_comments_count">{{object.like}} like{{ object.like|pluralize }}</div>
                                             </div>
                                         </a>    
@@ -76,7 +75,7 @@
                     <div class="col-lg-3">
                         <!-- Episode Image -->
                         <div class="episode_image">
-                            <img src="{% if object.image %}{{ object.image.url }}{% else %}{{ STATIC_PREFIX }}img/gbekefm.jpg{% endif %}" alt="{{ object.title }}">
+                            <img src="{% if object.image %}{{ object.image.url }}{% else %}{% static "img/gbekefm.jpg" %}{% endif %}" alt="{{ object.title }}">
                         </div>
                     </div>
                 </div>
@@ -107,38 +106,18 @@
                         </div>
                     </div>
                     <div class="guests">
-                        <div class="section_title">Invités du jours</div>
+                        <div class="section_title">Invité du jours</div>
                         <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-start">
                             
                             <!-- invités -->
                             <div class="guest_container">
                                 <div class="guest">
-                                    <div class="guest_image"><img src="{{ STATIC_PREFIX }}img/guest_1.jpg" alt=""></div>
+                                    <div class="guest_image"><img src="{% static "img/guest_3.jpg" %}" alt=""></div>
                                     <div class="guest_content text-center">
-                                        <div class="guest_name"><a href="#">Michael Smith</a></div>
-                                        <div class="guest_title">Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- invités -->
-                            <div class="guest_container">
-                                <div class="guest">
-                                    <div class="guest_image"><img src="{{ STATIC_PREFIX }}img/guest_2.jpg" alt=""></div>
-                                    <div class="guest_content text-center">
-                                        <div class="guest_name"><a href="#">Samantha Doe</a></div>
-                                        <div class="guest_title">Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- invités -->
-                            <div class="guest_container">
-                                <div class="guest">
-                                    <div class="guest_image"><img src="{{ STATIC_PREFIX }}img/guest_3.jpg" alt=""></div>
-                                    <div class="guest_content text-center">
-                                        <div class="guest_name"><a href="#">James Williams</a></div>
-                                        <div class="guest_title">Developer</div>
+                                        <div class="guest_name"><a href="#">
+                                            Mr Kobenan
+                                        </a></div>
+                                        <div class="guest_title">DG de Gbêke Fm</div>
                                     </div>
                                 </div>
                             </div>

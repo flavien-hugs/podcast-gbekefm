@@ -15,7 +15,7 @@ from cast.models import Podcast, Categorie
 # VUE DE RECHERCHE
 class SearchView(View):
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         queryset = Podcast.objects.all()
         query = request.GET.get('q')
         if query:
@@ -25,22 +25,23 @@ class SearchView(View):
 
         context = {'queryset': queryset}
         template = 'cast/podscat_search.html'
+
         return render(request, template, context)
 
 
 # VUE DE LA PAGE D'ACCUEIL
 class HomeView(ListView):
-
     model = Podcast
     template_name = 'index.html'
 
     def get_queryset(self):
         return Podcast.objects.order_by('publish')[:10]
-
-    def head(self, *args, **kwargs):
+    
+    def head(self):
         latest_podcast = self.get_queryset().latest('publish')
         response = HttpResponse('')
-        response['Last-Modified'] = latest_podcast.publish.strftime('%a, %d %b %Y %H:%M:%S GMT')
+        response['Last-Modified'] = latest_podcast.publish.strftime(
+            '%a, %d %b %Y %H:%M:%S GMT')
         return response
 
     def get_context_data(self, **kwargs):
@@ -53,7 +54,6 @@ class HomeView(ListView):
 
 # VUE DE LA PAGE DE DETAIL
 class PodcastDetailView(DetailView):
-
     model = Podcast
     template_name = 'cast/podcast_detail.html'
 
@@ -65,6 +65,18 @@ class PodcastDetailView(DetailView):
         return context
 
 
+# VUE DE LA PAGE ABOUT
+class PodcastAboutView(TemplateView):
+    template_name = 'cast/podcast_about.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PodcastAboutView, self).get_context_data(**kwargs)
+        cat = Categorie.objects.all()
+        context['categorie'] = cat
+        context['title'] = "about".upper()
+        return context
+
+
 # VUE LIKE PODCAST
 def uplike(request, slug, podcast_id):
     if request.method == 'POST':
@@ -72,21 +84,7 @@ def uplike(request, slug, podcast_id):
         podcast.like += 1
         podcast.save()
         return HttpResponseRedirect(reverse('cast:podcast',
-            args=[podcast.slug, podcast.id]))
-
-
-# VUE DE LA PAGE ABOUT
-class PodcastAboutView(TemplateView):
-
-	template_name = 'cast/podcast_about.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(PodcastAboutView, self).get_context_data(**kwargs)
-        cat = Categorie.objects.all()
-        context['categorie'] = cat
-        context['title'] = "about".upper()
-
-        return context
+                                            args=[podcast.slug, podcast.id]))
 
 
 # VUE ARCHIVE DU MOIS
@@ -95,4 +93,4 @@ class PodcastMonthArchiveView(MonthArchiveView):
     date_field = "publish"
     month_format = '%m'
     year_format = '%Y'
-    allow_future = False	
+    allow_future = False

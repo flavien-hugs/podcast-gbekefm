@@ -2,7 +2,10 @@
 
 from django.urls import path
 
-from cast.views import SearchView, PodcastDetailView, PodcastAboutView, PodcastMonthArchiveView, uplike
+from cast.views import (
+    SearchView, PodcastDetailView, PodcastAboutView,
+    PodcastMonthArchiveView, uplike
+    )
     
 from cast.models import Podcast
 

@@ -96,7 +96,7 @@
         <!-- Home -->
         {% block home %}
           <div class="home">
-            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ STATIC_PREFIX }}img/about.jpg" data-speed="0.8"></div>
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static "img/about.jpg" %}" data-speed="0.8"></div>
             <div class="home_container d-flex flex-column align-items-center justify-content-center">
               <div class="home_content">
                 <div class="home_title text-uppercase text-white"><h1>
@@ -144,17 +144,6 @@
                             <img src="{% if obj.image %}
                                 {{ obj.image.url }} {% else %} {% static "img/gbekefm.jpg" %}
                             {% endif %}" alt="{{ obj.title }}">
-                            <div class="tags">
-                              <ul class="d-flex flex-row align-items-start justify-content-start">
-                                <li>
-                                  {% for c in obj.categorie.all %}
-                                    <a href="#">
-                                      {{ c.cat|upper|safe }}
-                                    </a>
-                                  {% endfor %}
-                                </li>
-                              </ul>
-                            </div>
                           </div>
                         </div><!-- end image podscat -->
 

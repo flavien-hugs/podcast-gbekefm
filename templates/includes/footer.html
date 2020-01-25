@@ -44,8 +44,9 @@
             <div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
               
               <!-- Gallery Item -->
-              <div class="gallery_item">
-                <a class="colorbox" href="{% static "img/gallery_1_large.jpg" %}"><img src="{% static "img/gallery_1.jpg" %}" alt=""></a>
+              <div class="gallery_item position-relative">
+                <a class="colorbox" href="{% static "img/gallery_1_large.jpg" %}">
+                  <img src="{% static "img/gallery_1.jpg" %}" alt=""></a>
               </div>
 
             </div>
@@ -56,13 +57,10 @@
           <div class="col">
             <div class="footer_social">
               <ul class="d-flex flex-row align-items-center justify-content-center">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                &copy;<script>document.write(new Date().getFullYear());</script> Tous droits reservés.
               </ul>
             </div>
           </div>
         </div>
-        </br></br>
-        &copy;<script>document.write(new Date().getFullYear());</script> Tous droits reservés.
       </div>
     </footer><!--./end footer -->
