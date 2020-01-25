@@ -15,10 +15,8 @@ DATABASES['default'] = dj_database_url.config()
 INSTALLED_APPS += ['whitenoise.runserver_nostatic']
 
 # 'django.middleware.security.SecurityMiddleware',
-MIDDLEWARE_CLASSES = (
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    )
+MIDDLEWARE_CLASSES = 'whitenoise.middleware.WhiteNoiseMiddleware'
+
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
