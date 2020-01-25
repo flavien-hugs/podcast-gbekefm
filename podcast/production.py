@@ -9,6 +9,9 @@ from podcast.settings import *
 
 DEBUG = TEMPLATE_DEBUG = False
 
+# Activate Django-Heroku
+django_heroku.settings(locals())
+
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] = dj_database_url.config()
 
