@@ -12,12 +12,9 @@ DEBUG = False
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] = dj_database_url.config()
 
-INSTALLED_APPS += ['whitenoise.runserver_nostatic']
 
 # 'django.middleware.security.SecurityMiddleware',
-MIDDLEWARE_CLASSES = ('whitenoise.middleware.WhiteNoiseMiddleware',)
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ALLOWED_HOSTS = ['gbekefm.herokuapp.com']
