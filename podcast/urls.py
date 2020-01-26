@@ -11,7 +11,7 @@ from cast.views import HomeView
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('', include("cast.urls", namespace='cast')),
-    path('admin/', admin.site.urls),
+    path('axb/', admin.site.urls),
 ]
 
 if settings.DEBUG:
