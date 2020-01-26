@@ -7,7 +7,7 @@ __copyright__ = '© 2019 unsta'
 import dj_database_url
 from podcast.settings import *
 
-DEBUG = False
+DEBUG = TEMPLATE_DEBUG = False
 
 # SECURITE SSL/HTTPS
 SECURE_SSL_REDIRECT = True
@@ -15,8 +15,11 @@ SECURE_SSL_REDIRECT = True
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] = dj_database_url.config()
 
-# 'django.middleware.security.SecurityMiddleware',
+# APPLICATION DEFINITION
+INSTALLED_APPS += ['whitenoise.runserver_nostatic']
 
+# 'django.middleware.security.SecurityMiddleware',
+MIDDLEWARE += ['whitenoise.middleware.WhiteNoiseMiddleware']
 #  Add configuration for static files storage using whitenoise
 
 ALLOWED_HOSTS = ['gbekefm.herokuapp.com']
