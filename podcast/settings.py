@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'cast.apps.CastConfig',
-    'djangosecure',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +62,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'djangosecure.middleware.SecurityMiddleware',
 ]
 
 ROOT_URLCONF = 'podcast.urls'
