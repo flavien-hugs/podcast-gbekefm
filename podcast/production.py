@@ -15,6 +15,9 @@ SECURE_SSL_REDIRECT = True
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] = dj_database_url.config()
 
+# APPLICATION DJANGO INSTALLEES
+INSTALLED_APPS += ['djangosecure']
+
 # MIDDLEWARE_CLASSES
 MIDDLEWARE_CLASSES += ["djangosecure.middleware.SecurityMiddleware"]
 
