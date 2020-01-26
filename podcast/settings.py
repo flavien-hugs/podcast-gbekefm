@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'cast.apps.CastConfig',
+    'djangosecure',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'djangosecure.middleware.SecurityMiddleware',
 ]
 
 ROOT_URLCONF = 'podcast.urls'
@@ -153,3 +156,12 @@ STATICFILES_FINDERS = (
 )
 
 django_heroku.settings(locals())
+
+# HTTP STRICT TRANSPORT SECURITY
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# PROTECTION CONTRE LE DETOURNEMENT DE CLICS
+SECURE_FRAME_DENY = True
+
+# FILTRAGE XSS DU NAVIGATEUR
+SECURE_BROWSER_XSS_FILTER = True
