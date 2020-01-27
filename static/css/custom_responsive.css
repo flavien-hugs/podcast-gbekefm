@@ -27,7 +27,7 @@
 
 @media only screen and (max-width: 1600px)
 {
-	.header_content
+	.header-content
 	{
 		padding-left: 200px;
 	}
@@ -66,7 +66,7 @@
 
 @media only screen and (max-width: 1199px)
 {
-	.main_nav
+	.main-nav
 	{
 		display: none;
 	}
@@ -104,15 +104,15 @@
 	{
 		display: none;
 	}
-	.menu_submit
+	.menu-submit
 	{
 		display: block;
 	}
-	.episodes_col
+	.episodes-col
 	{
 		margin-top: 100px;
 	}
-	.footer_content_row > div[class^='col']:not(:last-child)
+	.footer-content-row > div[class^='col']:not(:last-child)
 	{
 		margin-bottom: 80px;
 	}
@@ -151,36 +151,36 @@
 
 @media only screen and (max-width: 767px)
 {
-	.home_title h1
+	.home-title h1
 	{
 		font-size: 48px;
 	}
-	.show_info
+	.show-info
 	{
 		display: none !important;
 	}
-	.episode_name a
+	.episode-name a
 	{
 		font-size: 16px;
 	}
-	.episode_date
+	.episode-date
 	{
 		margin-top: 4px;
 	}
-	.episode_date a
+	.episode-date a
 	{
 		font-size: 12px;
 		font-weight: 400;
 	}
-	.single_player
+	.single-player
 	{
 		height: auto;
 	}
-	.episode_image
+	.episode-image
 	{
 		width: 93px;
 	}
-	.episode_content
+	.episode-content
 	{
 		padding-left: 25px;
 		padding-right: 25px;
@@ -206,7 +206,7 @@
 	{
 		font-size: 24px;
 	}
-	.header_right
+	.header-right
 	{
 		right: 15px;
 	}
@@ -218,11 +218,11 @@
 	{
 		font-size: 24px;
 	}
-	.header_content
+	.header-content
 	{
 		height: 70px;
 	}
-	.menu_nav_list li a
+	.menu-nav-list li a
 	{
 		font-size: 36px;
 	}
@@ -230,7 +230,7 @@
 	{
 		display: block;
 	}
-	.home_container
+	.home-container
 	{
 		top: 55%;
 		-webkit-transform: translateY(-50%);
@@ -239,34 +239,34 @@
 		-o-transform: translateY(-50%);
 		transform: translateY(-50%);
 	}
-	.home_title
+	.home-title
 	{
 		margin-top: 10px;
 	}
-	.home_title h1
+	.home-title h1
 	{
 		font-size: 30px;
 	}
-	.button_fill,
-	.button_border
+	.button-fill,
+	.button-border
 	{
 		height: 38px;
 	}
-	.button_border a
+	.button-border a
 	{
 		font-size: 12px;
 		line-height: 36px;
 	}
-	.button_fill a
+	.button-fill a
 	{
 		font-size: 12px;
 		line-height: 38px;
 	}
-	.season_links ul li
+	.season-links ul li
 	{
 		font-size: 14px;
 	}
-	.sidebar_list ul li a
+	.sidebar-list ul li a
 	{
 		font-size: 14px;
 	}

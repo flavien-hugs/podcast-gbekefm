@@ -27,7 +27,7 @@
 
 @media only screen and (max-width: 1600px)
 {
-	.header_content
+	.header-content
 	{
 		padding-left: 200px;
 	}
@@ -66,7 +66,7 @@
 
 @media only screen and (max-width: 1199px)
 {
-	.main_nav
+	.main-nav
 	{
 		display: none;
 	}
@@ -104,29 +104,29 @@
 	{
 		display: none;
 	}
-	.menu_submit
+	.menu-submit
 	{
 		display: block;
 	}
-	.about_content
+	.about-content
 	{
 		width: 100%;
 		margin-top: 0;
 	}
-	.about_image
+	.about-image
 	{
 		margin-top: 60px;
 	}
-	.newsletter_input
+	.newsletter-input
 	{
 		width: calc(100% - 220px);
 	}
-	.newsletter_button
+	.newsletter-button
 	{
 		width: 190px;
 		font-size: 14px;
 	}
-	.footer_content_row > div[class^='col']:not(:last-child)
+	.footer-content-row > div[class^='col']:not(:last-child)
 	{
 		margin-bottom: 80px;
 	}
@@ -165,19 +165,19 @@
 
 @media only screen and (max-width: 767px)
 {
-	.about_image
+	.about-image
 	{
 		width: 290px;
 	}
-	.home_title h1
+	.home-title h1
 	{
 		font-size: 48px;
 	}
-	.newsletter_input
+	.newsletter-input
 	{
 		width: 100%;
 	}
-	.newsletter_button
+	.newsletter-button
 	{
 		width: 190px;
 		font-size: 14px;
@@ -204,7 +204,7 @@
 	{
 		font-size: 24px;
 	}
-	.header_right
+	.header-right
 	{
 		right: 15px;
 	}
@@ -216,11 +216,11 @@
 	{
 		font-size: 24px;
 	}
-	.header_content
+	.header-content
 	{
 		height: 70px;
 	}
-	.menu_nav_list li a
+	.menu-nav-list li a
 	{
 		font-size: 36px;
 	}
@@ -228,7 +228,7 @@
 	{
 		display: block;
 	}
-	.home_container
+	.home-container
 	{
 		top: 55%;
 		-webkit-transform: translateY(-50%);
@@ -237,30 +237,30 @@
 		-o-transform: translateY(-50%);
 		transform: translateY(-50%);
 	}
-	.home_title
+	.home-title
 	{
 		margin-top: 10px;
 	}
-	.home_title h1
+	.home-title h1
 	{
 		font-size: 30px;
 	}
-	.button_fill,
-	.button_border
+	.button-fill,
+	.button-border
 	{
 		height: 38px;
 	}
-	.button_border a
+	.button-border a
 	{
 		font-size: 12px;
 		line-height: 36px;
 	}
-	.button_fill a
+	.button-fill a
 	{
 		font-size: 12px;
 		line-height: 38px;
 	}
-	.newsletter_input
+	.newsletter-input
 	{
 		height: 44px;
 	}

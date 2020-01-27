@@ -27,7 +27,7 @@
 
 @media only screen and (max-width: 1600px)
 {
-	.header_content
+	.header-content
 	{
 		padding-left: 200px;
 	}
@@ -66,7 +66,7 @@
 
 @media only screen and (max-width: 1199px)
 {
-	.main_nav
+	.main-nav
 	{
 		display: none;
 	}
@@ -108,18 +108,18 @@
 	{
 		display: none;
 	}
-	.menu_submit
+	.menu-submit
 	{
 		display: block;
 	}
-	.episode_image_container
+	.episode-image-container
 	{
 		position: relative;
 		top: auto;
 		left: auto;
 		width: 100%;
 	}
-	.episode_image
+	.episode-image
 	{
 		width: 100%;
 		margin-top: 0px;
@@ -128,15 +128,15 @@
 	{
 		margin-top: 0;
 	}
-	.episode_col
+	.episode-col
 	{
 		margin-top: 53px;
 	}
-	.sidebar_col
+	.sidebar-col
 	{
 		margin-top: 100px;
 	}
-	.footer_content_row > div[class^='col']:not(:last-child)
+	.footer-content-row > div[class^='col']:not(:last-child)
 	{
 		margin-bottom: 80px;
 	}
@@ -175,33 +175,33 @@
 
 @media only screen and (max-width: 767px)
 {
-	.episode_name a
+	.episode-name a
 	{
 		font-size: 16px;
 	}
-	.episode_date
+	.episode-date
 	{
 		margin-top: 4px;
 	}
-	.episode_date a
+	.episode-date a
 	{
 		font-size: 12px;
 		font-weight: 400;
 	}
-	.single_player
+	.single-player
 	{
 		height: auto;
 	}
-	.episode_image
+	.episode-image
 	{
 		width: 150px;
 	}
-	.episode_content
+	.episode-content
 	{
 		padding-left: 25px;
 		padding-right: 25px;
 	}
-	.comment_form > div:first-child > div:first-child
+	.comment-form > div:first-child > div:first-child
 	{
 		margin-bottom: 30px;
 	}
@@ -226,7 +226,7 @@
 	{
 		font-size: 24px;
 	}
-	.header_right
+	.header-right
 	{
 		right: 15px;
 	}
@@ -238,11 +238,11 @@
 	{
 		font-size: 24px;
 	}
-	.header_content
+	.header-content
 	{
 		height: 70px;
 	}
-	.menu_nav_list li a
+	.menu-nav-list li a
 	{
 		font-size: 36px;
 	}
@@ -254,42 +254,42 @@
 	{
 		height: 442px;
 	}
-	.home_container
+	.home-container
 	{
 		padding-top: 114px;
 	}
-	.home_title
+	.home-title
 	{
 		margin-top: 10px;
 	}
-	.home_title h1
+	.home-title h1
 	{
 		font-size: 24px;
 	}
-	.button_fill,
-	.button_border
+	.button-fill,
+	.button-border
 	{
 		height: 38px;
 	}
-	.button_border a
+	.button-border a
 	{
 		font-size: 12px;
 		line-height: 36px;
 	}
-	.button_fill a
+	.button-fill a
 	{
 		font-size: 12px;
 		line-height: 38px;
 	}
-	.season_links ul li
+	.season-links ul li
 	{
 		font-size: 14px;
 	}
-	.sidebar_list ul li a
+	.sidebar-list ul li a
 	{
 		font-size: 14px;
 	}
-	.comment_button
+	.comment-button
 	{
 		width: 121px;
 		font-size: 12px;

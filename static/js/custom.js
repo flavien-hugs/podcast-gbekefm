@@ -65,7 +65,7 @@ $(document).ready(function()
 		{
 			var menu = $('.menu');
 			var hamburger = $('.hamburger');
-			var close = $('.menu_close');
+			var close = $('.menu-close');
 
 			hamburger.on('click', function()
 			{
@@ -87,9 +87,9 @@ $(document).ready(function()
 
 	function initFavs()
 	{
-		if($('.show_fav_icon').length)
+		if($('.show-fav-icon').length)
 		{
-			var icons = $('.show_fav_icon');
+			var icons = $('.show-fav-icon');
 			icons.each(function()
 			{
 				var icon = $(this);
@@ -157,7 +157,7 @@ $(document).ready(function()
 
 	function initGallery()
 	{
-		if($('.gallery_item').length)
+		if($('.gallery-item').length)
 		{
 			$('.colorbox').colorbox(
 			{

@@ -33,9 +33,9 @@
 
   <body class="d-flex flex-column">
     <div class="flex-grow-1 flex-shrink-0">
-      <div class="super_container">
+      <div class="super-container">
         <!-- Header -->
-        <header class="header trans_400">
+        <header class="header trans-400">
           <!-- Logo -->
           <div class="logo">
             <a href="/"><span>Gbêkế</span>Fm</a>
@@ -44,8 +44,8 @@
           <div class="container">
             <div class="row">
               <div class="col">
-                <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
-                  <nav class="main_nav">
+                <div class="header-content d-flex flex-row align-items-center justify-content-start trans-400">
+                  <nav class="main-nav">
                     <ul class="d-flex flex-row align-items-start justify-content-start">
                       <li><a href="/">Home</a></li>
                       <li><a href="{% url "cast:about" %}">About</a></li>
@@ -57,9 +57,27 @@
           </div>
 
           <!-- social -->
-          <div class="header_right d-flex flex-row align-items-start justify-content-start">
-            <!-- help -->
-            <div class="submit"><a href="#">Soutenir la radio</a></div>
+          <div class="header-right d-flex flex-row align-items-start justify-content-start">
+            <div class="submit">
+              <script src="{% static "js/cinetpay-button.js" %}?apikey=174323661757617531bf99c9.80613927"
+                data-button="donate"
+                data-designation="Soutenir la radio"
+                data-amount="25"
+                data-trans-id="8575421"
+                data-payment-config="SINGLE"
+                data-page-action="PAYMENT"
+                data-version="V2"
+                data-currency="CFA"
+                data-language="fr"
+                data-custom=""
+                data-site-id="393509"
+                data-golive="no"
+                data-callback="{% url "home" %}notify/"
+                data-return-page="{% url "home" %}return/"
+                data-cancel-page="{% url "home" %}cancel/"
+                async>
+              </script>
+            </div>
       
             <div class="social">
               <ul class="d-flex flex-row align-items-start justify-content-start">
@@ -77,12 +95,12 @@
 
         <!-- Menu -->
         <menu class="menu">
-          <div class="menu_content d-flex flex-column align-items-end justify-content-start">
-            <ul class="menu_nav_list text-right">
+          <div class="menu-content d-flex flex-column align-items-end justify-content-start">
+            <ul class="menu-nav-list text-right">
               <li><a href="/">Home</a></li>
               <li><a href="{% url "cast:about" %}">About</a></li>
             </ul>
-            <div class="menu_extra d-flex flex-column align-items-end justify-content-start">
+            <div class="menu-extra d-flex flex-column align-items-end justify-content-start">
               <div class="social">
                 <ul class="d-flex flex-row align-items-start justify-content-start">
                   <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -96,13 +114,7 @@
         <!-- Home -->
         {% block home %}
           <div class="home">
-            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static "img/about.jpg" %}" data-speed="0.8"></div>
-            <div class="home_container d-flex flex-column align-items-center justify-content-center">
-              <div class="home_content">
-                <div class="home_title text-uppercase text-white"><h1>
-                  {% block home_title %}gbeke fm{% endblock home_title %}
-                </h1></div>
-              </div>
+            <div class="parallax-background parallax-window" data-parallax="scroll" data-image-src="{% static "img/about.jpg" %}" data-speed="0.8">
             </div>
           </div>
         {% endblock home %}<!-- .end/ Home -->
@@ -116,11 +128,11 @@
                 <aside class="col-lg-3">
                   <div class="sidebar">
                     <!-- Search -->
-                    <div class="sidebar_search">
-                      <div class="sidebar_title">Search</div>
-                      <form action="#" class="search_form" id="search_form">
-                        <input type="text" class="search_input" placeholder="Search here" required="required">
-                        <button class="search_button">
+                    <div class="sidebar-search">
+                      <div class="sidebar-title">Search</div>
+                      <form action="#" class="search-form" id="search-form">
+                        <input type="text" class="search-input" placeholder="Search here" required="required">
+                        <button class="search-button">
                           <i class="fa fa-search"></i>
                         </button>
                       </form>
@@ -132,23 +144,23 @@
                 </aside><!-- end Sidebar -->
 
                 <!-- all podcast -->
-                <section class="col-lg-9 episodes_col">
-                  <div class="episodes_container">
+                <section class="col-lg-9 episodes-col">
+                  <div class="episodes-container">
                     
                     <!-- podscat -->
                     {% for obj in object_list %}
                       <div class="episode d-flex flex-row align-items-start justify-content-start s1">
                         <!-- image podscat -->
                         <div>
-                          <div class="episode_image">
+                          <div class="episode-image">
                             <img src="{% if obj.image %}
                               {{ obj.image.url }} {% else %} {% static "img/gbekefm.jpg" %} {% endif %}" alt="{{ obj.title }}">
                           </div>
                         </div><!-- end image podscat -->
 
                         <!-- podscat content -->
-                        <div class="episode_content">
-                          <div class="episode_name">
+                        <div class="episode-content">
+                          <div class="episode-name">
                             {% for c in obj.categorie.all %}
                               <a href="{{ obj.get_absolute_url }}">
                                 {{ c.cat|upper|safe }} &smid; {{ obj.title|safe }}
@@ -156,20 +168,20 @@
                             {% endfor %} 
                           </div>
 
-                          <div class="episode_date">
+                          <div class="episode-date">
                             <a href="#"> {{ obj.publish|date }} </a>
                           </div>
 
-                          <div class="show_info d-flex flex-row align-items-start justify-content-start">
-                            <div class="show_fav d-flex flex-row align-items-center justify-content-start">
-                              <div class="show_fav_icon show_info_icon"><img class="svg" src="{% static "img/heart.svg" %}"></div>
-                              <div class="show_fav_count">{{obj.like}} like{{ obj.like|pluralize }}</div>
+                          <div class="show-info d-flex flex-row align-items-start justify-content-start">
+                            <div class="show-fav d-flex flex-row align-items-center justify-content-start">
+                              <div class="show-fav-icon show-info-icon"><img class="svg" src="{% static "img/heart.svg" %}"></div>
+                              <div class="show-fav-count">{{obj.like}} like{{ obj.like|pluralize }}</div>
                             </div>
                           </div>
 
                           <!-- player -->
-                          <div class="single_player_container">
-                            <div class="single_player flex-row align-items-center justify-content-start">
+                          <div class="single-player-container">
+                            <div class="single-player flex-row align-items-center justify-content-start">
                               <div class="player">
                                 <audio id="player{{ obj.id }}" preload="none" controls style="width:100%">
                                   <source src="{{ obj.url_audio }}" type="audio/mp3">

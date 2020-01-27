@@ -1,13 +1,13 @@
     {# templates/includes/sidebar.html #}
     
     <!-- Categories -->
-    <div class="sidebar_tags">
-        <div class="sidebar_title">Categories</div>
+    <div class="sidebar-tags">
+        <div class="sidebar-title">Categories</div>
         <div class="tags">
             <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
                 {% for c in categorie %}
                     <li>
-                        <a href="#"> {{ c.cat }} </a>
+                        <a href="#">{{ c.cat }}</a>
                     </li>
                 {% endfor %}
             </ul>
@@ -17,7 +17,7 @@
     <!-- Tags --><!-- end Tags -->
 
     <!-- Archive -->
-    <div class="sidebar_archive">
-        <div class="sidebar_title">Archive</div>
+    <div class="sidebar-archive">
+        <div class="sidebar-title">Archive</div>
         {% include "cast/podcast_archive_month.html" %}
     </div> <!-- ./end Archive -->

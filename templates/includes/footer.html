@@ -5,7 +5,7 @@
     <!-- start footer -->
     <footer class="footer flex-shrink-0">
       <div class="container">
-        <div class="row footer_logo_row">
+        <div class="row footer-logo-row">
           <div class="col d-flex flex-row align-items-center justify-content-center">
             <div class="logo">
               <a href="#"><span>Gbêkê</span>Fm</a>
@@ -13,12 +13,12 @@
           </div>
         </div>
 
-        <div class="row footer_content_row">
+        <div class="row footer-content-row">
         
           <!-- Tags -->
           <div class="col-lg-4">
-            <div class="footer_title">Tags</div>
-            <div class="footer_list">
+            <div class="footer-title">Tags</div>
+            <div class="footer-list">
               <div>
                 {% for cat in categorie %}
                   <div><a href="#">{{ cat.cat|safe }}</a></div>
@@ -29,8 +29,8 @@
 
           <!-- Latest Episodes -->
           <div class="col-lg-4">
-            <div class="footer_title">Derniers informations</div>
-            <div class="latest_container">
+            <div class="footer-title">Derniers informations</div>
+            <div class="latest-container">
               
               <!-- Latest -->
               {% latest_podcast 3 %}
@@ -40,22 +40,22 @@
 
           <!-- Gallery -->
           <div class="col-lg-4">
-            <div class="footer_title">Evènements de la semaine</div>
+            <div class="footer-title">Evènements de la semaine</div>
             <div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
               
               <!-- Gallery Item -->
-              <div class="gallery_item position-relative">
+              <div class="gallery-item position-relative">
                 <a class="colorbox" href="{% static "img/gallery_1_large.jpg" %}">
-                  <img src="{% static "img/gallery_1.jpg" %}" alt=""></a>
+                  <img src="{% static "img/gallery_1.jpg" %}"></a>
               </div>
 
             </div>
           </div><!-- end evenements -->
         </div>
 
-        <div class="row footer_social_row">
+        <div class="row footer-social-row">
           <div class="col">
-            <div class="footer_social">
+            <div class="footer-social">
               <ul class="d-flex flex-row align-items-center justify-content-center">
                 &copy;<script>document.write(new Date().getFullYear());</script> Tous droits reservés.
               </ul>
