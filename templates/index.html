@@ -142,8 +142,7 @@
                         <div>
                           <div class="episode_image">
                             <img src="{% if obj.image %}
-                                {{ obj.image.url }} {% else %} {% static "img/gbekefm.jpg" %}
-                            {% endif %}" alt="{{ obj.title }}">
+                              {{ obj.image.url }} {% else %} {% static "img/gbekefm.jpg" %} {% endif %}" alt="{{ obj.title }}">
                           </div>
                         </div><!-- end image podscat -->
 

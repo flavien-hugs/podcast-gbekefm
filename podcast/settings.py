@@ -6,7 +6,6 @@ __copyright__ = '© 2019 unsta'
 
 
 import os
-import django_heroku
 from django.core.exceptions import ImproperlyConfigured
 
 def get_env_variable(var_name, default_value=None):
@@ -153,7 +152,6 @@ STATICFILES_FINDERS = (
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-django_heroku.settings(locals())
 
 # HTTP STRICT TRANSPORT SECURITY
 SECURE_HSTS_SECONDS = 20

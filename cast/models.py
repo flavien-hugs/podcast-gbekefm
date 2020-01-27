@@ -52,8 +52,8 @@ class Podcast(models.Model):
 
     class Meta:
         ordering = ('publish',)
-        verbose_name = 'Podcast'
-        verbose_name_plural = 'Podcasts'
+        verbose_name = 'podcast'
+        verbose_name_plural = 'podcasts'
 
     def __str__(self):
         return "%s (%s)" % (
